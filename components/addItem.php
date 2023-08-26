@@ -17,11 +17,7 @@ if (isset($_POST['submit'])) {
       if (!$row) {
          $sql = "INSERT INTO categories  (name) VALUES ('$category')";
          $resc = mysqli_query($con, $sql);
-      } else {
-         header('Location:../items/index.php?error=This item already exists.');
-         exit();
-
-      }
+      } 
 
       header('Location:../items/index.php?success=item added successfully');
       exit();
