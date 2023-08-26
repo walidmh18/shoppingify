@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  min-width: 60%;
+  min-height: 60%;
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 1px solid #eaeaee;
+  box-shadow: var(--shadow);
+}
+form h1 {
+  margin-bottom: 2rem;
+}
+form label {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+form input {
+  all: unset;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--grey);
+}
+span {
+  color: var(--yellow);
+}
+.buttonsContainer :is(button, a) {
+  padding: 0.7rem 2.5rem;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  transition: 0.3s;
+  color: var(--blue);
+
+  text-align: center;
+}
+.buttonsContainer .registerBtn {
+  background: var(--blue);
+  color: white;
+  /* display: block; */
+  /* width: 100px; */
+}
+.registerBtn:hover {
+  background: none;
+  color: var(--blue);
+}
+.buttonsContainer {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.loginAction {
+  font-weight: 500;
+}
+.loginAction a {
+  color: var(--blue);
+  text-decoration: underline;
+}

@@ -1,0 +1,444 @@
+.rightSideMenu {
+  width: 25rem;
+  padding: 2rem;
+  height: 100dvh;
+  background: var(--right-menu-bg);
+  overflow: hidden;
+  float: right;
+  position: sticky;
+  top: 0;
+}
+
+.addItem {
+  display: flex;
+  background: var(--add-item-bg);
+  padding: 2rem;
+  position: relative;
+  color: white;
+  font-size: 1.4rem;
+  flex-direction: row-reverse;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.addItem img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 35%;
+}
+
+.addItem .text {
+  width: 65%;
+  align-self: flex-end;
+}
+
+.addItem button {
+  background: white;
+  padding: 0.7rem 1.5rem;
+  color: var(--titles);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 500;
+  border: 2px solid white;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.addItem button:hover {
+  background: none;
+  color: white;
+}
+
+.shoppingListTxt {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--titles);
+}
+
+.shoppingList {
+  overflow-y: scroll;
+  height: 50%;
+}
+
+.shoppingList::-webkit-scrollbar {
+  all: unset;
+  background: none;
+  width: 5px;
+}
+
+.shoppingList::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
+
+.shoppingList p.categoryName {
+  color: var(--grey);
+  font-size: 1.3rem;
+}
+
+.shoppingList .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.shoppingList .item .name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--titles);
+}
+
+.shoppingList .item .name button {
+  color: var(--yellow);
+}
+
+.shoppingList .item .quantity {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: 0.3rem 0.5rem;
+  border-radius: 100vmax;
+}
+
+.actions {
+  margin: 2rem;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.actions > div {
+  position: relative;
+  height: 60px;
+}
+
+.actions input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--yellow);
+  font-size: 1.3rem;
+  padding: 1rem;
+  outline: none;
+}
+
+.actions .editBtns button {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 0 2rem;
+  background: var(--yellow);
+  border-radius: 10px;
+}
+
+.actions .completeBtns {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.actions .completeBtns button {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+}
+
+.actions .completeBtns button.completeBtn {
+  background: var(--blue);
+  color: white;
+}
+
+.complete {
+  display: none;
+}
+
+.rightSideMenu form {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.shoppingList.active,
+.editBtns.active {
+  display: block;
+}
+
+.completeBtns.active {
+  display: flex;
+}
+.shoppingList:not(.active),
+.completeBtns:not(.active),
+.editBtns:not(.active) {
+  display: none;
+}
+
+.addItemContainer {
+  background: white;
+  display: none;
+}
+
+
+.addItemContainer label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.addItemContainer input,
+.addItemContainer textarea,
+.addItemContainer ul {
+  resize: none;
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px var(--light) solid;
+  background: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  list-style: none;
+}
+
+.addItemContainer ul {
+  max-height: 20vh;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.addItemContainer ul::-webkit-scrollbar {
+  all: unset;
+  background: none;
+  width: 5px;
+}
+
+.addItemContainer ul::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
+
+.addItemContainer ul:active {
+  display: block;
+}
+
+.addItemContainer ul li {
+  font-size: 1.4rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.addItemContainer ul li:hover {
+  border-radius: 10px;
+  background: #f2f2f2;
+}
+
+.addItemContainer input[name="category"]:focus ~ div ul {
+  display: block;
+}
+
+.addItemContainer form {
+  position: relative;
+}
+
+.addItemContainer .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+  vertical-align: bottom;
+}
+
+.addItemContainer .buttons button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  transition: 0.3s;
+}
+
+.addItemContainer .buttons .submitBtn {
+  background: var(--yellow);
+  color: white;
+  border: 2px solid var(--yellow);
+}
+
+.shoppingList {
+  position: relative;
+}
+
+.shoppingList img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  max-width: 90%;
+}
+
+.showItemContainer {
+  background: white;
+  display: none;
+}
+
+.showItemContainer .backBtn {
+  color: var(--yellow);
+  font-size: 1.6rem;
+}
+
+.showItemContainer img {
+  max-width: 100%;
+  margin: 3rem 0;
+  border-radius: 2rem;
+}
+
+.showItemContainer .info {
+  margin-bottom: 2rem;
+}
+
+.showItemContainer .info p {
+  color: var(--grey);
+}
+
+.showItemContainer .info h3 {
+  color: var(--titles);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.showItemContainer .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+  vertical-align: bottom;
+  padding: 2rem;
+  width: 100%;
+}
+
+.showItemContainer .quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showItemContainer .quantity button {
+  background: var(--yellow);
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.showItemContainer .quantity span {
+  font-size: 1.4rem;
+  padding: 0 1rem;
+}
+
+.showItemContainer .buttons * {
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+}
+
+.addToListBtn {
+  background: var(--yellow);
+  color: white;
+  border-radius: 0.3rem;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.checkbox-wrapper *,
+.checkbox-wrapper ::after,
+.checkbox-wrapper ::before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.checkbox-wrapper .check {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper .label svg {
+  vertical-align: middle;
+  stroke: #fff;
+}
+
+.checkbox-wrapper .path1 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s stroke-dashoffset;
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + div label svg g path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+}
+
+@media (max-width: 1024px) {
+  .rightSideMenu {
+    width: 20rem;
+  }
+}
+@media (max-width: 768px) {
+  .rightSideMenu {
+    position: fixed;
+    right: max(-25rem, calc(-100vw + 70px));
+    transition: 0.3s;
+    width: min(25rem, calc(100vw - 70px));
+  }
+  .rightSideMenu.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  
+  .addItem button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .addItem {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .addItem button {
+    margin-top: 0;
+    padding: 0.3rem 0.7rem;
+  }
+  .addItem {
+    font-size: 1.2rem;
+  }
+}

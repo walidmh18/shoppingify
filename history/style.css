@@ -1,0 +1,107 @@
+html,
+body {
+  height: 100%;
+}
+
+.body {
+  background: var(--bg);
+  padding: 2rem 5rem;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.body h1,
+.body p {
+  color: var(--titles);
+}
+
+.body > h1 {
+  margin-bottom: 3rem;
+}
+
+.body .month h3 {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.body span {
+  color: var(--yellow);
+}
+
+.listsContainer .list {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  align-items: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.listsContainer .list > p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+.listsContainer .list .right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.listsContainer .list .right .date {
+  color: var(--grey);
+}
+
+.listsContainer .list .right .condition {
+  padding: 0.1rem 0.3rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+}
+
+.listsContainer .list .right .condition.completed {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.listsContainer .list .right .condition.pending {
+  color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.listsContainer .list .right .condition.canceled {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.listsContainer .list .right a {
+  color: var(--yellow);
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .body {
+    padding: 2rem;
+  }
+
+  .date {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .listsContainer .list .right {
+    gap: 0;
+  }
+
+  .listsContainer .list .right a {
+    padding: 0.5rem;
+  }
+
+  .listsContainer .list .right .condition {
+    font-size: 1rem;
+  }
+}
