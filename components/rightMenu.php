@@ -309,6 +309,7 @@
          },
          success: function(response) {
             $('#res').html(response);
+            console.log(response);
             obj = JSON.parse(response);
 
 

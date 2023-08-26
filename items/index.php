@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('../components/head.php');
+<?php function includeHead($t){
+   include('../components/head.php'); 
+}
+includeHead('Items');
+
 session_start();
 if (isset($_SESSION['username'])) {
    $username = $_SESSION['username'];

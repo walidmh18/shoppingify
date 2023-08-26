@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('../components/connection.php');
-
+if(isset($_SESSION['username'])){
+   
 if (isset($_POST['submit'])) {
    $list_name = $_POST['listName'];
    $username = $_SESSION['username'];
@@ -55,6 +56,10 @@ if (isset($_POST['submit'])) {
    
 }
 
+} else {
+   header("Location:../login?error=You should be logged in to save a list");
+   exit();
+}
 
 
 ?>

@@ -15,5 +15,7 @@ if (isset($_POST['item'])) {
    $myObj->image = $row['image'];
    $myObj->note = $row['note'];
    $myJSON = json_encode($myObj);
+   echo $myJSON;
+}else{
 }
 ?>

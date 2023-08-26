@@ -1,5 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
-include('../components/head.php');
+function includeHead($t){
+   include('../components/head.php'); 
+}
+includeHead('History');
+
 include('../components/connection.php');
 session_start();
 

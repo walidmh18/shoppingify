@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
-include('../../components/head.php');
+
 include('../../components/connection.php');
 
 $id = $_GET['i'];
@@ -7,6 +10,11 @@ $id = $_GET['i'];
 $sql = "SELECT * FROM lists WHERE id = $id";
 $res = mysqli_query($con, $sql);
 
+$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+function includeHead($t){
+   include('../../components/head.php'); 
+}
+includeHead($row['list_name']);
 
 
 ?>
@@ -29,7 +37,6 @@ $res = mysqli_query($con, $sql);
 
          <?php
 
-         $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
          $username = $row['username'];
